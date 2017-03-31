@@ -30,7 +30,7 @@ class Ngrams():
             ngrams.append(u"_".join(tokens[i:i+N]))
         return ngrams
     
-    def _sub_make_ngrams(self, p, N):
+    def __sub_make_ngrams(self, p, N):
         N = len(self.text_paths)
         ini = N * (p) / self.process_num
         fin = N * (p + 1) / self.process_num
@@ -48,7 +48,7 @@ class Ngrams():
    
     def make_ngrams(self, N):
                 
-        callback = Parallel(n_jobs=self.process_num)(delayed(self._sub_make_ngrams)(i, N) for i in range(self.process_num))
+        callback = Parallel(n_jobs=self.process_num)(delayed(self.__sub_make_ngrams)(i, N) for i in range(self.process_num))
         cnt = Counter()
         for _cnt in callback:
             cnt += _cnt
