@@ -3,7 +3,7 @@
 import cPickle
 import gzip
 
-class Pipe:
+class Serializer:
    
     @staticmethod
     def dump_data(frms, file_path, suffix=".pkl.gz"):
