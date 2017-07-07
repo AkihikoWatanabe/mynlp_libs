@@ -10,7 +10,7 @@ def sparse_data_format_to_index_dic(path, feature_num):
     def get_features(path):
         with open(path) as f:
             features = f.read().strip().split("\n")
-        return features[:1000]
+        return features
 
     x_dic = {}
     y_dic = {}
