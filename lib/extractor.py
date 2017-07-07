@@ -34,7 +34,7 @@ def sparse_data_format_to_index_dic(path, feature_num):
             y_list, past_qid, i = [], qid, 0
 
         # for y
-        label = -1.0 if case[0] == "0" else 1.0
+        label = 0 if case[0] == "0" else 1
         y_list.append(label)
 
         # for x
