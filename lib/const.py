@@ -2,6 +2,9 @@
 
 from collections import Enum
 
+# loggerがログを書き出すディレクトリ
+LOG_DIR = "./log"
+
 
 class MeCabConst(Enum):
     """ MeCab関連の定数を定義。Preprocessingモジュールで用いる。
