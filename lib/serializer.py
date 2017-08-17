@@ -1,6 +1,10 @@
 # coding=utf-8
 
-import cPickle
+import six
+if six.PY2:
+    import cPickle
+elif six.PY3:
+    import pickle as cPickle
 import gzip
 
 class Serializer:
