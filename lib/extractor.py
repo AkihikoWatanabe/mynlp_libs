@@ -26,7 +26,7 @@ def sparse_data_format_to_index_dic(path, feature_num):
         if past_qid == None:
             past_qid = qid
         elif qid != past_qid:
-            x_list = sp.csr_matrix((x_data, (x_row_ind, x_col_ind)), (len(y_list), feature_num), dtype=np.float32)
+            x_list = sp.csr_matrix((x_data, (x_row_ind, x_col_ind)), (len(y_list), feature_num), dtype=np.int8)
             y_list = np.asarray(y_list, dtype=np.int8)
             x_dic[past_qid], y_dic[past_qid] = x_list, y_list
             # init
@@ -45,7 +45,7 @@ def sparse_data_format_to_index_dic(path, feature_num):
 
         i += 1
                 
-    x_list = sp.csr_matrix((x_data, (x_row_ind, x_col_ind)), (len(y_list), feature_num))
+    x_list = sp.csr_matrix((x_data, (x_row_ind, x_col_ind)), (len(y_list), feature_num), dtype=np.int8)
     y_list = np.asarray(y_list, dtype=np.int8)
     x_dic[past_qid], y_dic[past_qid] = x_list, y_list
 
